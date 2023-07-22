@@ -5,12 +5,12 @@
 #include <stdlib.h>
 
 /**
- * struct listint_s - Dththt node
- *
- * @n: nnnn
- * @prev: Pointer to the previous
- * @next: Pointer to 
- */
+* struct listint_s - Dththt node
+*
+* @n: nnnn
+* @prev: Pointer to the previous
+* @next: Pointer to
+*/
 typedef struct listint_s
 {
 const int n;
