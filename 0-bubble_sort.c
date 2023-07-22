@@ -12,7 +12,7 @@ size_t i, y;
 
 for (i = 0; i < size - 1; i++)
 {
-for (y = 0; y < size - 1; y++)
+for (y = 0; y < size - i -  1; y++)
 {
 if (array[y] > array[y + 1])
 {
