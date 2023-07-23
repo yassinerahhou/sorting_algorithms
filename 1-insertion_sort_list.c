@@ -37,7 +37,6 @@ sorted = current->prev;
 }
 
 current = temp;
-print_list(*list);
 }
 }
 
