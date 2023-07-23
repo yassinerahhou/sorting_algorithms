@@ -1,42 +1,50 @@
 #include "sort.h"
-#include <stdio.h>
 
 /**
- * insertion_sort_list - Sorts a doubly linked list.
+ * insertion_sort_list - Sorts a doubly linked list
  *
- * @list: Double pointer to the head of the linked list
+ * @list: Pointer to a pointer to the head of the list
 */
 void insertion_sort_list(listint_t **list)
 {
 listint_t *current = (*list)->next;
+listint_t *temp = *list;
 if (list == NULL || *list == NULL || (*list)->next == NULL)
 return;
 
 while (current != NULL)
 {
-listint_t *temp = current->next;
-listint_t *sorted = current->prev;
+listint_t *next = current->next;
+listint_t *prev = current->prev;
+int value = current->n;
 
-while (sorted != NULL && sorted->n > current->n)
+while (prev != NULL && prev->n > value)
 {
-sorted->next = current->next;
-
+prev->next = current->next;
 if (current->next != NULL)
-current->next->prev = sorted;
+current->next->prev = prev;
+current->next = prev;
+current->prev = prev->prev;
+prev->prev = current;
 
-current->prev = sorted->prev;
-current->next = sorted;
-
-if (sorted->prev != NULL)
-sorted->prev->next = current;
-else
+if (current->prev == NULL)
 *list = current;
+else
+current->prev->next = current;
 
-sorted->prev = current;
-sorted = current->prev;
+prev = current->prev;
 }
 
-current = temp;
+current = next;
+
+while (temp != NULL)
+{
+printf("%d", temp->n);
+if (temp->next != NULL)
+printf(", ");
+temp = temp->next;
+}
+printf("\n");
 }
 }
 
