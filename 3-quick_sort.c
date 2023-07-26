@@ -34,7 +34,7 @@ print_array(array, size);
 return (j + 1);
 }
 /**
-* quicsort - quick sort fiji hj njjf bjnjf jhf 
+* quicsort - quick sort fiji hj njjf bjnjf jh
 * @array: array jhfkjfihf iji
 * @prem: premiernever
 * @dern: dernier pos
